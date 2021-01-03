@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import _ from 'lodash'
 
@@ -21,16 +22,19 @@ class EventsIndex extends Component {
 
   render() {
     return (
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Body</th>
-          </tr>
-        </thead>
-        <tbody>{this.renderEvents()}</tbody>
-      </table>
+      <>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Body</th>
+            </tr>
+          </thead>
+          <tbody>{this.renderEvents()}</tbody>
+        </table>
+        <Link to="/events/new">New Events</Link>
+      </>
     )
   }
 }
