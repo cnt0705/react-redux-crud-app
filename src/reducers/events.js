@@ -1,11 +1,12 @@
+import _ from 'lodash'
 import { READ_EVENTS } from '../actions'
 
-const reducer = (state = {}, action) => {
+const reducer = (events = {}, action) => {
   switch (action.type) {
     case READ_EVENTS:
-      return state
+      return _.mapKeys(action.response.data, 'id')
     default:
-      return state
+      return events
   }
 }
 
