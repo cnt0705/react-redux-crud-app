@@ -9,6 +9,7 @@ import thunk from 'redux-thunk'
 import reducer from './reducers'
 import EventsIndex from './components/EventsIndex'
 import EventsNew from './components/EventsNew'
+import EventsShow from './components/EventsShow'
 
 import './index.css'
 import reportWebVitals from './reportWebVitals'
@@ -19,7 +20,8 @@ ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <Switch>
-        <Route exact path="/events/new" component={EventsNew} />
+        <Route path="/events/new" component={EventsNew} />
+        <Route path="/events/:id" component={EventsShow} />
         <Route exact path="/" component={EventsIndex} />
       </Switch>
     </BrowserRouter>
