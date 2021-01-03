@@ -32,7 +32,7 @@ class EventsNew extends Component {
   }
 
   render() {
-    const { handleSubmit, pristine, submitting } = this.props // Passed from redux-form
+    const { handleSubmit, pristine, submitting, invalid } = this.props // Passed from redux-form
 
     return (
       <form onSubmit={handleSubmit(this.onSubmit)}>
@@ -43,7 +43,7 @@ class EventsNew extends Component {
           <Field label="Body" name="body" type="text" component={this.renderField} />
         </div>
         <div>
-          <input type="submit" value="Submit" disabled={pristine || submitting} />
+          <input type="submit" value="Submit" disabled={pristine || submitting || invalid} />
           <Link to="/">Cancel</Link>
         </div>
       </form>
